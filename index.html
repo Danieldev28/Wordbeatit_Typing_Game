@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>WordBeatit!</title>
+</head>
+
+<body>
+    <header class="content">
+        <h1>Wordbeatit</h1>
+    </header>
+
+    <div class="col-12" id="banner-button">
+        <button type="button" class="btn btn-outline-success category" id="random">Random</button>
+        <button type="button" class="btn btn-outline-info category" id="html">HTML</button>
+        <button type="button" class="btn btn-outline-info category" id="css">CSS</button>
+        <button type="button" class="btn btn-outline-info category" id="javascript">Javascript</button>
+        <button type="button" class="btn btn-outline-info category" id="python">Python</button>
+        <button type="button" class="btn btn-outline-success category" id="vocabulary">Vocabulary</button>
+    </div>
+    <!--game wrap-->
+    <div id="game-wrap" class="col-md-6 mx-auto">
+        <p class="content">Type the given word within 5 seconds!</p>
+        <h2 class="display-2 mb-5" id="current-word">Get Ready...</h2>
+
+        <input type="text" class="form-control form-control-lg" placeholder="Start typing..." id="word-input" autofocus="">
+        
+        <div class="on-start text-center">
+        <button id="start_game" type="button" class="btn btn-light">Start Match</button>
+        </div>
+        <div class="score-board">
+            <div id="user-label" class="badge">Score</div>
+            <span id="user-score">0</span>
+            <div id="best-score-label" class="badge">Best</div>
+            <span id="user-best-score">0</span>
+            <div id="time-left-label" class="badge">Time Left</div>
+            <span id="user-time">0</span>:<span id="countdown-timer">0</span>
+        </div>
+
+        <div class="instruction-card">
+            <h5 class="instruction-label">Instructions</h5>
+            <p>Press <strong class="text-success">start</strong> to begin a new game. Be fast!</p>
+            <!--<p>Press <strong class="text-success">Enter</strong> to submit your attempt.</p>-->
+            <p>Type each word in the given amount of seconds to score. Prepare yourself, difficulty is gradually increasing.</p>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+body {
+    background: yellow;
+}
+header, p {
+    text-align:center;
+}
+
+#current-word {
+    text-align:center;
+}
+
+.on-start {
+    margin-top:10px;
+}
+.instruction-card {
+    border: 1px solid black;
+ 
+    
+}
+.instruction-label {
+    text-align: center;
+    
+}
+
+.score-board {
+    text-align:center;
+}
+
+#banner-button {
+    text-align:center;
+}
+
+.inactive{
+    pointer-events: none;
+    color:rgb(0,0,0,0.5);
+}
+
+.active {
+    background-color:#28a745!important;
+}
