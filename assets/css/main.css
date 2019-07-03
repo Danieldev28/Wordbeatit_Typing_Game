@@ -38,3 +38,10 @@ header, p {
 .active {
     background-color:#28a745!important;
 }
+
+#user-time{
+    font-size: -webkit-xxx-large;
+    font-style: normal;
+    width: 10px;
+    font-family: "digital-7regular";
+}

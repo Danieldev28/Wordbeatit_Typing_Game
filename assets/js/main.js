@@ -4,11 +4,13 @@ var html = ["div", "anchor","tag","title","tags","element","tables","semanticfor
 var javascript =["whileloop","forloop","elseif","else","ifstatement","functioncalling","consoletime","consolelog","confirm","popupbox","casekeyword","switchkeyword","ternaryoperator","output","statements","syntax","comments","variables","operators","arithmetic","assignment","datatypes","functions","objects","events","strings","stringmethods","numbers","numbermethods","arraysort","array iteration","dates","dateformats","dategetmethods","datesetmethods","math","mathrandom","random","Booleans","comparisons","conditions","switch","loopfor","loopwhile","break","typeconversion","bitwise","regexp","errors","scope","hoisting","strictmode","thiskeyword","a-let","const","arrowfunction","classes","debugging","styleguide","bestpractices","mistakes","performance","reservedkeywords","versions","versiones5","versiones6","json","jsforms","api","objectdefinitions","objectproperties","objectmethods","objectconstructors","objecrprototype","objectecmascript5","functiondefinitions","functionparameters","functioninvocation","functioncall","functioncall","functionapply","functionclosures","dommethods","nodelists","collections","nodes","navigation","eventlistener","events","animations","domcss","domhtml","domelements","documentobjectmodel","domdocument"];
 var css = ["syntax","backgrounds","borders","margins","padding","height/width","box-model","outline","text","fonts","icons","links","lists","tables","display","max-width","position","overflow","float","inline-block","align","combinators","pseudo-class","pseudo-element","opacity","navigation-bar","dropdowns","imagegallery","imagesprites","attrselectors","forms","counters","websitelayout","units","specificity","rounded-corners","borderimages","background","gradients","shadows","texteffects","webfonts","2dtransforms","3dtransforms","transitions","animations","tooltips","styleimages","object-fit","buttons","pagination","multiplecolumns","user-interface","variables","box-sizing","flexbox","mediaqueires","mqexamples","viewport","gridview","rwdmediaqueries","rwdimages","rwdvideos","rwdframeworks","rwdtemplates","color-values","css-browsersupport"];
 var python = ["zenofpython","yield","with","while","variables","tuple","try","statement","strings","str","slice","setuptools","set","reduce","pythonic","pythonpackageindex","pep8","pass","object-oriented","object","module","methods","map","literals","lambda","iterate","ipython","interpret","interactive-mode","int","import","immutable","ifstatement","idle","highlevellanguage","generators","garbagecollection","functioncall","function","for","float","filter","expression","evaluation-order","easy-install","_future_","docstring","distutils","dictionary","def","debugging","conditional-statement","continue","compiler","class","break","assignment","assert","argparse","argument","abs",">>>"];
+var vocabulary = ["that"]
 wordList.random = random;
 wordList.html = html;
 wordList.javascript = javascript;
 wordList.css = css;
 wordList.python = python;
+wordList.vocabulary = vocabulary;
 
 
 $(".category").on("click", function(){
@@ -21,14 +23,67 @@ $("#start_game").on("click", function(){
         alert("Please select your game category");
     }
     else {
-    var id_selected_category = $(".active").attr("id");
-   var random_occourance = Math.floor(Math.random() * wordList[id_selected_category].length);
-   var index_to_remove = wordList[id_selected_category].indexOf(wordList[id_selected_category][random_occourance]);
-   $("#current-word").text(wordList[id_selected_category][random_occourance]);
-   wordList[id_selected_category].splice(index_to_remove,1);
+        playRound();
     }
    
    
    
 });
+
+
+var count = 500;
+var counter;
+var correctWords = []
+// var currentScore;
+// currentScore.push($("#user-score").val());
+
+// var counter = setInterval(timer, 10); //10 will  run it every 100th of a second
+
+function timer()
+{
+    if (count == 0)
+    {
+        clearInterval(counter);
+        checkResult(); 
+        if (checkResult() ===true){
+        $("#answer-input").val("");
+        correctWords.push($("#answer-input").val());
+     
+        count = 500;
+        playRound();
+        } else {
+            alert(correctWords.length);
+            alert("You have lost the round please play again.");
+        }
+
+        
+    }
+    
+    else{
+        count--;
+    }
+        // alert(count)
+     document.getElementById("user-time").innerHTML=count /100; 
+}
+
+
+function playRound(){
+    var speed = 10;
+    var id_selected_category = $(".active").attr("id");
+   var random_occourance = Math.floor(Math.random() * wordList[id_selected_category].length);
+   var index_to_remove = wordList[id_selected_category].indexOf(wordList[id_selected_category][random_occourance]);
+   $("#current-word").text(wordList[id_selected_category][random_occourance]);
+   wordList[id_selected_category].splice(index_to_remove,1);
+  counter = setInterval(timer, speed); //10 will  run it every 100th of a second
+    }
+    
+function checkResult(){
+var testWord = $("#current-word").text();
+var userAnswer = $("#answer-input").val();
+if (testWord === userAnswer){
+    return true;
+} else {
+    return false;
+}
+};
 
