@@ -1,38 +1,41 @@
 body {
     background: yellow;
 }
-header, p {
+
+/*----------------------combined text align for all classes----->*/
+.align-it-center {
     text-align:center;
 }
 
-#current-word {
-    text-align:center;
-}
+/*header, p {*/
+/*    text-align:center;*/
+/*}*/
 
-.on-start {
-    margin-top:10px;
-}
-.instruction-card {
-    border: 1px solid black;
- 
+/*#banner-button {*/
+/*    text-align:center;*/
+/*}*/
+
+
+
+/*#current-word {*/
+/*    text-align:center;*/
+/*}*/
+
+
+/*.score-board {*/
+/*    text-align:center;*/
+/*}*/
+
+/*.instruction-label {*/
+/*    text-align: center;*/
     
-}
-.instruction-label {
-    text-align: center;
-    
-}
+/*}*/
 
-.score-board {
-    text-align:center;
-}
-
-#banner-button {
-    text-align:center;
-}
+/*--------------------------Category selection javascript-------->*/
 
 #level-button{
     display:none;
-    text-align:center;
+    /*text-align:center;*/
     margin-top:10px!important;
 }
 
@@ -45,6 +48,12 @@ header, p {
     background-color:#28a745!important;
 }
 
+.on-start {
+    margin-top:10px;
+}
+
+/*Count-down Timer style */
+
 #user-time{
     font-size: -webkit-xxx-large;
     font-style: normal;
@@ -52,10 +61,14 @@ header, p {
     font-family: "digital-7regular";
 }
 
-
+/*---------------------------------Checkbox player wins!------->*/
 .align{
     color:green;
     margin-top: 20px !important;
     display: none;
     
+}
+
+.instruction-card {
+    border: 1px solid black;
 }

@@ -16,12 +16,12 @@
     <title>WordBeatit!</title>
 </head>
 
-<body>
-    <header class="content">
+<body class="align-it">
+    <header class="content align-it-center">
         <h1>Wordbeatit</h1>
     </header>
 
-    <div class="col-12" id="banner-button">
+    <div class="col-12 align-it-center" id="banner-button">
         <button type="button" class="btn btn-outline-success category" id="random">Random</button>
         <button type="button" class="btn btn-outline-info category" id="html">HTML</button>
         <button type="button" class="btn btn-outline-info category" id="css">CSS</button>
@@ -30,7 +30,7 @@
         <button type="button" class="btn btn-outline-success category" id="vocabulary">Vocabulary</button>
     </div>
     
-     <div class="col-12" id="level-button">
+     <div class="col-12 align-it-center" id="level-button">
         <button type="button" class="btn btn-outline-success level" id="900">easy</button>
         <button type="button" class="btn btn-outline-info level" id="700">medium</button>
         <button type="button" class="btn btn-outline-info level" id="500">hard</button>
@@ -41,15 +41,15 @@
     
     <!--game wrap-->
     <div id="game-wrap" class="col-md-6 mx-auto">
-        <p class="content">Type the given word within 5 seconds!</p>
-        <h2 class="display-2 mb-5" id="current-word">Get Ready...</h2>
+        <p class="content align-it-center">Type the given word within 5 seconds!</p>
+        <h2 class="display-2 mb-5 align-it-center" id="current-word">Get Ready...</h2>
 
         <input type="text" id="answer-input" class="form-control form-control-lg adjust_input" placeholder="Start typing..." id="word-input" autofocus="">
         <p><i class="fas fa-check-square fa-3x align" id="checkbox"></i></p>
         <div class="on-start text-center">
         <button id="start_game" type="button" class="btn btn-light">Start Match</button>
         </div>
-        <div class="score-board">
+        <div class="score-board align-it-center">
             <div id="user-label" class="badge">Score</div>
             <span id="user-score">0</span>
             <div id="best-score-label" class="badge">Best</div>
@@ -59,11 +59,11 @@
             <!--:<span id="countdown-timer">0</span>-->
         </div>
 
-        <div class="instruction-card">
-            <h5 class="instruction-label">Instructions</h5>
-            <p>Press <strong class="text-success">start</strong> to begin a new game. Be fast!</p>
+        <div class="instruction-card align-it-center">
+            <h5 class="instruction-label align-it-center">Instructions</h5>
+            <p class="align-it-center">Press <strong class="text-success">start</strong> to begin a new game. Be fast!</p>
             <!--<p>Press <strong class="text-success">Enter</strong> to submit your attempt.</p>-->
-            <p>Type each word in the given amount of seconds to score. Prepare yourself, difficulty is gradually increasing.</p>
+            <p class="align-it-center">Type each word in the given amount of seconds to score. Prepare yourself, difficulty is gradually increasing.</p>
         </div>
     </div>
     
