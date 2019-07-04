@@ -30,6 +30,12 @@ header, p {
     text-align:center;
 }
 
+#level-button{
+    display:none;
+    text-align:center;
+    margin-top:10px!important;
+}
+
 .inactive{
     pointer-events: none;
     color:rgb(0,0,0,0.5);
@@ -44,4 +50,12 @@ header, p {
     font-style: normal;
     width: 10px;
     font-family: "digital-7regular";
+}
+
+
+.align{
+    color:green;
+    margin-top: 20px !important;
+    display: none;
+    
 }

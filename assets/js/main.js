@@ -12,10 +12,21 @@ wordList.css = css;
 wordList.python = python;
 wordList.vocabulary = vocabulary;
 
+var userTimeSelect = 500;
 
 $(".category").on("click", function(){
     $(this).siblings().addClass("inactive");
     $(this).addClass("active");
+    $("#level-button").show();
+    
+});
+
+
+$(".level").on("click", function(){
+    userTimeSelect = $(this).attr("id");
+    $(this).siblings().addClass("inactive");
+    $(this).addClass("active");
+    count = parseInt(userTimeSelect);
 });
 
 $("#start_game").on("click", function(){
@@ -23,7 +34,10 @@ $("#start_game").on("click", function(){
         alert("Please select your game category");
     }
     else {
+        $("#start_game").hide();
+        $("#answer-input").focus();
         playRound();
+        
     }
    
    
@@ -31,11 +45,11 @@ $("#start_game").on("click", function(){
 });
 
 
-var count = 500;
+var count = parseInt(userTimeSelect);
 var counter;
 var correctWords = []
-// var currentScore;
-// currentScore.push($("#user-score").val());
+
+
 
 // var counter = setInterval(timer, 10); //10 will  run it every 100th of a second
 
@@ -46,14 +60,20 @@ function timer()
         clearInterval(counter);
         checkResult(); 
         if (checkResult() ===true){
-        $("#answer-input").val("");
         correctWords.push($("#answer-input").val());
-     
-        count = 500;
+        $("#user-score").text(correctWords.length*1.5);
+        $("#answer-input").val("");
+        $("#checkbox").hide();
+
+        count =  parseInt(userTimeSelect);
         playRound();
         } else {
-            alert(correctWords.length);
-            alert("You have lost the round please play again.");
+            $("#answer-input").attr("readonly", "readonly");
+            $("#answer-input").css({"border-color":"red" ,"box-shadow":"0 0 0 0.2rem red"});
+            $("#final-score").text(correctWords.length*1.5);
+            $("#myModal").modal();
+            // alert(correctWords.length*1.5);
+            // alert("You have lost the round please play again.");
         }
 
         
@@ -62,7 +82,7 @@ function timer()
     else{
         count--;
     }
-        // alert(count)
+ 
      document.getElementById("user-time").innerHTML=count /100; 
 }
 
@@ -86,4 +106,16 @@ if (testWord === userAnswer){
     return false;
 }
 };
+
+$( "#answer-input" ).keyup(function() {
+  var checkBox = checkResult();
+  if (checkBox === true) {
+      $("#checkbox").show();
+      $("#checkbox").css("margin-top", "20px !important");
+    }else {
+      $("#checkbox").hide();
+    }
+  
+  
+});
 
