@@ -40,7 +40,7 @@
     </div>
     
     <!--game wrap-->
-    <div id="game-wrap" class="col-md-6 mx-auto">
+    <div id="game-wrap" class="col-md-6 mx-auto align-it-center">
         <p class="content align-it-center">Type the given word within 5 seconds!</p>
         <h2 class="display-2 mb-5 align-it-center" id="current-word">Get Ready...</h2>
 
@@ -58,7 +58,18 @@
             <p class="badge" id="user-time">0</p>
             <!--:<span id="countdown-timer">0</span>-->
         </div>
-
+<table class="table table-dark definition-table hide-table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Word</th>
+      <th scope="col">Definition</th>
+    
+    </tr>
+  </thead>
+  <tbody id="table-body">
+  </tbody>
+</table>
         <div class="instruction-card align-it-center">
             <h5 class="instruction-label align-it-center">Instructions</h5>
             <p class="align-it-center">Press <strong class="text-success">start</strong> to begin a new game. Be fast!</p>

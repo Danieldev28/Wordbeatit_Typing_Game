@@ -72,6 +72,7 @@ function timer()
             $("#answer-input").css({"border-color":"red" ,"box-shadow":"0 0 0 0.2rem red"});
             $("#final-score").text(correctWords.length*1.5);
             $("#myModal").modal();
+            userlostRound();
             // alert(correctWords.length*1.5);
             // alert("You have lost the round please play again.");
         }
@@ -114,8 +115,29 @@ $( "#answer-input" ).keyup(function() {
       $("#checkbox").css("margin-top", "20px !important");
     }else {
       $("#checkbox").hide();
+      
     }
   
   
 });
 
+
+var blank_WordTable = '<tr><th scope="row">1</th><td>fdsf</td><td>fdsfd</td></tr>'
+
+function userlostRound(){
+    if (correctWords.length === 0) {
+        alert("you didnt get anything right");
+    } else { 
+    var i;
+    for (i=0; i<correctWords.length; i++){
+        alert(i);
+        var correctWordTable = blank_WordTable.replace("1",i+1);
+        correctWordTable = correctWordTable.replace("fdsf",correctWords[i] );
+        
+        $("#table-body").append(correctWordTable);
+        $(".hide-table").show();
+    }
+        
+    }
+    
+};

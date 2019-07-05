@@ -29,3 +29,7 @@ Css
 python
 https://www.pythonforbeginners.com/cheatsheet/python-glossary
 ["zenofpython","yield","with","while","variables","tuple","try","statement","strings","str","slice","setuptools","set","reduce","pythonic","pythonpackageindex","pep8","pass","object-oriented","object","module","methods","map","literals","lambda","iterate","ipython","interpret","interactive-mode","int","import","immutable","ifstatement","idle","highlevellanguage","generators","garbagecollection","functioncall","function","for","float","filter","expression","evaluation-order","easy-install","_future_","docstring","distutils","dictionary","def","debugging","conditional-statement","continue","compiler","class","break","assignment","assert","argparse","argument","abs",">>>"];
+
+
+ubuntu:~/environment (master) $ git commit -m "updated counter on game working in real time/start match dissapears on click command/user correct answer verification checkmark added/the score has been updated to *1.5 per point/updated modal to a bootstrap custom modal alert"
+after chnaging css

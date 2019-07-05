@@ -72,3 +72,7 @@ body {
 .instruction-card {
     border: 1px solid black;
 }
+
+.hide-table {
+    display: none;
+}
