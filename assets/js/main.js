@@ -4,7 +4,9 @@ var html = ["div", "anchor", "tag", "title", "tags", "element", "tables", "seman
 var javascript = ["whileloop", "forloop", "elseif", "else", "ifstatement", "functioncalling", "consoletime", "consolelog", "confirm", "popupbox", "casekeyword", "switchkeyword", "ternaryoperator", "output", "statements", "syntax", "comments", "variables", "operators", "arithmetic", "assignment", "datatypes", "functions", "objects", "events", "strings", "stringmethods", "numbers", "numbermethods", "arraysort", "array iteration", "dates", "dateformats", "dategetmethods", "datesetmethods", "math", "mathrandom", "random", "Booleans", "comparisons", "conditions", "switch", "loopfor", "loopwhile", "break", "typeconversion", "bitwise", "regexp", "errors", "scope", "hoisting", "strictmode", "thiskeyword", "a-let", "const", "arrowfunction", "classes", "debugging", "styleguide", "bestpractices", "mistakes", "performance", "reservedkeywords", "versions", "versiones5", "versiones6", "json", "jsforms", "api", "objectdefinitions", "objectproperties", "objectmethods", "objectconstructors", "objecrprototype", "objectecmascript5", "functiondefinitions", "functionparameters", "functioninvocation", "functioncall", "functioncall", "functionapply", "functionclosures", "dommethods", "nodelists", "collections", "nodes", "navigation", "eventlistener", "events", "animations", "domcss", "domhtml", "domelements", "documentobjectmodel", "domdocument"];
 var css = ["syntax", "backgrounds", "borders", "margins", "padding", "height/width", "box-model", "outline", "text", "fonts", "icons", "links", "lists", "tables", "display", "max-width", "position", "overflow", "float", "inline-block", "align", "combinators", "pseudo-class", "pseudo-element", "opacity", "navigation-bar", "dropdowns", "imagegallery", "imagesprites", "attrselectors", "forms", "counters", "websitelayout", "units", "specificity", "rounded-corners", "borderimages", "background", "gradients", "shadows", "texteffects", "webfonts", "2dtransforms", "3dtransforms", "transitions", "animations", "tooltips", "styleimages", "object-fit", "buttons", "pagination", "multiplecolumns", "user-interface", "variables", "box-sizing", "flexbox", "mediaqueires", "mqexamples", "viewport", "gridview", "rwdmediaqueries", "rwdimages", "rwdvideos", "rwdframeworks", "rwdtemplates", "color-values", "css-browsersupport"];
 var python = ["zenofpython", "yield", "with", "while", "variables", "tuple", "try", "statement", "strings", "str", "slice", "setuptools", "set", "reduce", "pythonic", "pythonpackageindex", "pep8", "pass", "object-oriented", "object", "module", "methods", "map", "literals", "lambda", "iterate", "ipython", "interpret", "interactive-mode", "int", "import", "immutable", "ifstatement", "idle", "highlevellanguage", "generators", "garbagecollection", "functioncall", "function", "for", "float", "filter", "expression", "evaluation-order", "easy-install", "_future_", "docstring", "distutils", "dictionary", "def", "debugging", "conditional-statement", "continue", "compiler", "class", "break", "assignment", "assert", "argparse", "argument", "abs", ">>>"];
-var vocabulary = ["that"]
+var vocabulary = ["superb", "amazing", "clear"];
+
+
 wordList.random = random;
 wordList.html = html;
 wordList.javascript = javascript;
@@ -113,6 +115,7 @@ $("#answer-input").keyup(function() {
     if (checkBox === true) {
         $("#checkbox").show();
         $("#checkbox").css("margin-top", "20px !important");
+        $()
     }
     else {
         $("#checkbox").hide();
@@ -132,29 +135,51 @@ function userlostRound() {
     else {
         var i;
         for (i = 0; i < correctWords.length; i++) {
-            alert(i);
             var correctWordTable = blank_WordTable.replace("1", i + 1);
             correctWordTable = correctWordTable.replace("fdsf", correctWords[i]);
+            if ($(".active").attr("id") == "vocabulary"){
+            wordDefinition(correctWords[i], correctWordTable);
+            }
+            else {
+            correctWordTable = correctWordTable.replace("fdsfd","something");
             $("#table-body").append(correctWordTable);
             $(".hide-table").show();
+            }
+            // console.log(localStorage.getItem("definition"));
+            // correctWordTable = correctWordTable.replace("fdsfd",localStorage.getItem("definition"));
+            // $("#table-body").append(correctWordTable);
+            // $(".hide-table").show();
         }
 
     }
 
 };
 
-var xhr = new XMLHttpRequest();
 
-xhr.open ("GET", "https://www.dictionaryapi.com/api/v3/references/collegiate/json/voluminous?key=833754d1-505c-459f-a936-2182413f2cc4");
+
+function wordDefinition(targetWord, tablestring){
+  var xhr = new XMLHttpRequest();
+
+xhr.open ("GET", "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" + targetWord + "?key=833754d1-505c-459f-a936-2182413f2cc4");
 xhr.send();
 
 xhr.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        // document.getElementById("data").innerHTML = responseText;
-            var meaning = JSON.parse(this.responseText)
-            console.log(meaning[0].shortdef[0]);
-
-        
+            var meaning = JSON.parse(this.responseText);
+            tablestring = tablestring.replace("fdsfd",meaning[0].shortdef[0]);
+            $("#table-body").append(tablestring);
+            $(".hide-table").show();
+            return meaning[0].shortdef[0];
     }
+};  
+return true;
     
 };
+
+// ---on keypress of enter!--//
+// $('input').on('keypress', function(e) {
+//     var code = e.keyCode || e.which;
+//     if(code==13){
+//         // Enter pressed... do anything here...
+//     }
+// });
