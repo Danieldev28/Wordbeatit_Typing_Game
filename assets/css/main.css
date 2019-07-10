@@ -76,3 +76,7 @@ body {
 .hide-table {
     display: none;
 }
+
+#sfx-player {
+    display:none;
+}
