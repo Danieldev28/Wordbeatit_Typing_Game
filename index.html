@@ -2,88 +2,146 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="assets/css/main.css" type="text/css">
-    <link rel="stylesheet" href="assets/css/stylesheet.css" type="text/css">
-    <!--<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>-->
-    <title>WordBeatit!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="assets/css/main.css" type="text/css">
+  <link rel="stylesheet" href="assets/css/stylesheet.css" type="text/css">
+  <!--<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>-->
+  <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_PQJEWwGrqhbhmG7EAXsX7");
+        })();
+    </script>
+  <title>WordBeatit!</title>
 </head>
 
 <body class="align-it">
-    <header class="content align-it-center">
-        <h1>Wordbeatit</h1>
-    </header>
+  <header class="content align-it-center">
+    <h1>Wordbeatit</h1>
+  </header>
 
-    <div class="col-12 align-it-center" id="banner-button">
-        <button type="button" class="btn btn-outline-success category" id="random">Random</button>
-        <button type="button" class="btn btn-outline-info category" id="html">HTML</button>
-        <button type="button" class="btn btn-outline-info category" id="css">CSS</button>
-        <button type="button" class="btn btn-outline-info category" id="javascript">Javascript</button>
-        <button type="button" class="btn btn-outline-info category" id="python">Python</button>
-        <button type="button" class="btn btn-outline-success category" id="vocabulary">Vocabulary</button>
-    </div>
-    
-     <div class="col-12 align-it-center" id="level-button">
-        <button type="button" class="btn btn-outline-success level" id="900">easy</button>
-        <button type="button" class="btn btn-outline-info level" id="700">medium</button>
-        <button type="button" class="btn btn-outline-info level" id="500">hard</button>
-        <button type="button" class="btn btn-outline-info level" id="400">pro</button>
-        <button type="button" class="btn btn-outline-info level" id="300">Expert</button>
-        <button type="button" class="btn btn-outline-success level" id="200">God Mode!</button>
-    </div>
-    
-    <!--game wrap-->
-    <div id="game-wrap" class="col-md-6 mx-auto align-it-center">
-        <p class="content align-it-center">Type the given word within 5 seconds!</p>
-        <h2 class="display-2 mb-5 align-it-center" id="current-word">Get Ready...</h2>
+  <div class="col-12 align-it-center" id="banner-button">
+    <button type="button" class="btn btn-outline-success category" id="random">Random</button>
+    <button type="button" class="btn btn-outline-info category" id="html">HTML</button>
+    <button type="button" class="btn btn-outline-info category" id="css">CSS</button>
+    <button type="button" class="btn btn-outline-info category" id="javascript">Javascript</button>
+    <button type="button" class="btn btn-outline-info category" id="python">Python</button>
+    <button type="button" class="btn btn-outline-success category" id="vocabulary">Vocabulary</button>
+  </div>
 
-        <input type="text" id="answer-input" class="form-control form-control-lg adjust_input" placeholder="Start typing..." id="word-input" autofocus="">
-        <p><i class="fas fa-check-square fa-3x align" id="checkbox"></i></p>
-        
-        <div class="on-start text-center">
-        <button id="start_game" type="button" class="btn btn-light">Start Match</button>
-        </div>
-        <div class="score-board align-it-center">
-            <div id="user-label" class="badge">Score</div>
-            <span id="user-score">0</span>
-            <div id="best-score-label" class="badge">Best</div>
-            <span id="user-best-score">0</span>
-            <div id="time-left-label" class="badge">Time Left</div>
-            <p class="badge" id="user-time">0</p>
-            <!--:<span id="countdown-timer">0</span>-->
+  <div class="col-12 align-it-center" id="level-button">
+    <button type="button" class="btn btn-outline-success level" id="900">easy</button>
+    <button type="button" class="btn btn-outline-info level" id="700">medium</button>
+    <button type="button" class="btn btn-outline-info level" id="500">hard</button>
+    <button type="button" class="btn btn-outline-info level" id="400">pro</button>
+    <button type="button" class="btn btn-outline-info level" id="300">Expert</button>
+    <button type="button" class="btn btn-outline-success level" id="200">God Mode!</button>
+  </div>
+
+  <!--game wrap-->
+  <div id="game-wrap" class="col-md-6 mx-auto align-it-center">
+    <p class="content align-it-center">Type the given word within 5 seconds!</p>
+    <h2 class="display-2 mb-5 align-it-center" id="current-word">Get Ready...</h2>
+
+    <input type="text" id="answer-input" class="form-control form-control-lg adjust_input" placeholder="Start typing..." id="word-input" autofocus="">
+    <p><i class="fas fa-check-square fa-3x align" id="checkbox"></i></p>
+
+    <div class="on-start text-center">
+      <button id="start_game" type="button" class="btn btn-light">Start Match</button>
+      <button class="btn btn-light" id="restart-game" value="Refresh Page" onClick="window.location.reload();">Restart Match</button>
+    </div>
+    <div class="score-board align-it-center">
+      <div id="user-label" class="badge">Score</div>
+      <span id="user-score">0</span>
+      <div id="best-score-label" class="badge">Best</div>
+      <span id="user-best-score">0</span>
+      <div id="time-left-label" class="badge">Time Left</div>
+      <p class="badge" id="user-time">0</p>
+      <!--:<span id="countdown-timer">0</span>-->
+    </div>
+
+    <table class="table table-dark definition-table hide-table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Word</th>
+          <th scope="col">Definition</th>
+
+        </tr>
+      </thead>
+      <tbody id="table-body">
+
+      </tbody>
+    </table>
+    <!--------------Email Results Form------------->
+        <div class="form-group hide-table">
+          <label for="exampleInputEmail1">Enter your email to recieve your vocabulary terms...</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="privacy-policy" class="form-text text-muted">Your privacy is important to us. We'll never share your email with anyone else.</small>
+          <br>
+          <button class="btn btn-light" id ="mail-submission">Submit</button>
         </div>
 
-<table class="table table-dark definition-table hide-table">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Word</th>
-      <th scope="col">Definition</th>
-    
-    </tr>
-  </thead>
-  <tbody id="table-body">
-  </tbody>
-</table>
-        <div class="instruction-card align-it-center">
-            <h5 class="instruction-label align-it-center">Instructions</h5>
-            <p class="align-it-center">Press <strong class="text-success">start</strong> to begin a new game. Be fast!</p>
-            <!--<p>Press <strong class="text-success">Enter</strong> to submit your attempt.</p>-->
-            <p class="align-it-center">Type each word in the given amount of seconds to score. Prepare yourself, difficulty is gradually increasing.</p>
-        </div>
+  
+    <div class="instruction-card align-it-center">
+      <h5 class="instruction-label align-it-center">Instructions</h5>
+      <p class="align-it-center">Choose a category and press <strong class="text-success">Start Match</strong> to begin a new game. Be fast!</p>
+      <!--<p>Press <strong class="text-success">Enter</strong> to submit your attempt.</p>-->
+      <p class="align-it-center">Type each word in the given amount of seconds to score. Prepare yourself, difficulty is gradually increasing.</p>
     </div>
-    
-    <!--Modal-->
-    <div class="modal fade" id="myModal" role="dialog">
+  </div>
+
+
+
+ <!--Choose your category Modal-->
+  <div class="modal fade" id="dialogModal" role="dialog">
     <div class="modal-dialog .modal-dialog-centered">
-    
+
+      <!-- Modal content-->
+      <div class="modal-content">
+       
+        <div class="modal-header">
+          <h4 class="modal-title">What should I do?</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <p><ol><li>Please select your game category</li><li>Choose a level</li><li>Press start match</li></ol></p>
+        </div>
+        <button type="button"  data-dismiss="modal" class="btn btn-primary">Ok</button>
+      </div>
+      </div>
+      </div>
+      
+      <!--You didn't get anything right! Modal-->
+  <div class="modal fade" id="nothingrightdialogModal" role="dialog">
+    <div class="modal-dialog .modal-dialog-centered">
+
+      <!-- Modal content-->
+       
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Play again!</h4>
+        </div>
+       <div class="modal-body">
+          <p>You didn't get anything right, better luck next time</p>
+        </div>
+        <button type="button"  data-dismiss="modal" class="btn btn-primary">Ok</button>
+      </div>
+      </div>
+      </div>
+      
+      
+  <!--Game Over Modal-->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog .modal-dialog-centered">
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
@@ -97,17 +155,17 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
-      
+
     </div>
   </div>
-  <div id = "sfx-player">
+  <div id="sfx-player">
     <audio id="gameSoundPlayer" controls>
     <source src="assets/audio/right.wav" type="audio/mpeg">
     Your browser does not support the audio element.
     </audio>
   </div>
 
-    <script type="text/javascript" src="assets/js/main.js"></script>
+  <script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 
 </html>

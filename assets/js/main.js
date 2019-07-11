@@ -8,7 +8,8 @@ var python = ["zenofpython", "yield", "with", "while", "variables", "tuple", "tr
 var vocabulary = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library"];
 // ------ custom dictionary definitions for non-dicitonary programming terms---->
 var randomTerms = []
-var htmlTerms = ["div is an html structure",]
+var htmlTerms = ["div The <div> tag defines a division or a section in an HTML document. The <div> element is often used as a container for other HTML elements to style them with CSS or to perform certain tasks with JavaScript div,The <div> tag defines a division or a section in an HTML document."
+,"anchor The HTML code for creating a link to another page or to a particular section within a page. It is also commonly called an h-ref."]
 var javascriptTerms = []
 var cssTerms = []
 var pythonTerms = []
@@ -41,7 +42,7 @@ $(".level").on("click", function() {
 //--------start of the game* on non click of Start Match alert, on click of category + Start Match start game --------->
 $("#start_game").on("click", function() {
     if ($(".active").length == 0) {
-        alert("Please select your game category");
+        $("#dialogModal").modal();
     }
     else {
         var timeleft = 3;
@@ -100,7 +101,7 @@ function playRound() {
 function checkResult() {
     var testWord = $("#current-word").text();
     var userAnswer = $("#answer-input").val();
-    if (testWord === userAnswer) {
+    if (testWord.toUpperCase() === userAnswer.toUpperCase()) {
         return true;
     }
     else {
@@ -129,10 +130,7 @@ $("#answer-input").keyup(function() {
 var blank_WordTable = '<tr><th scope="row">1</th><td>fdsf</td><td>fdsfd</td></tr>'
 
 function userlostRound() {
-    if (correctWords.length === 0) {
-        alert("you didnt get anything right");
-    }
-    else {
+    if (correctWords.length != 0) {
         var i;
         for (i = 0; i < correctWords.length; i++) {
             var correctWordTable = blank_WordTable.replace("1", i + 1);
@@ -203,7 +201,14 @@ function verifyResult() {
         $("#answer-input").attr("readonly", "readonly");
         $("#answer-input").css({ "border-color": "red", "box-shadow": "0 0 0 0.2rem red" });
         $("#final-score").text(correctWords.length * 1.5);
-        $("#myModal").modal();
+        if (correctWords.length === 0) {
+        $("#nothingrightdialogModal").modal();
+        // alert("you didnt get anything right");
+        }
+        else{
+          $("#myModal").modal();  
+        }
+        
         userlostRound();
         // alert(correctWords.length*1.5); (DELETE)
         // alert("You have lost the round please play again.");(DELETE)
@@ -222,3 +227,17 @@ function gameSdfx(soundOf) {
     }
 
 }
+
+$("#mail-submission").on("click", function(){
+    var template_params = {
+   "to_email": $("exampleInputEmail1").val() ,
+   "from_name": "Daniel",
+   "subject_message": "I am prefillingt the subject message",
+   "body_message": "words and definition",
+}
+alert("hello");
+
+var service_id = "default_service";
+var template_id = "template_jyLHx8AM";
+emailjs.send(service_id, template_id, template_params);
+});
