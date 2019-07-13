@@ -71,7 +71,7 @@ wordList.vocabulary = vocabulary;
 //------------------------------default start time with no difficulty selected*-------->
 var userTimeSelect = 500;
 //--------------on click of category make others inactive------------->
-$(".category").on("click", function() {
+$(".category").one("click", function() {
     if($(this).attr('id') == "random"){
         var randomelement = document.getElementsByClassName("category");
         var randomcategoryNumber = Math.floor(Math.random() * 5) + 1 ;
@@ -79,7 +79,7 @@ $(".category").on("click", function() {
     $(this).addClass("active");
         randomelement[randomcategoryNumber].classList.add("active");
         randomelement[randomcategoryNumber].classList.add("chosen");
-      
+    
     }
     else{
     $(this).siblings().addClass("inactive");
