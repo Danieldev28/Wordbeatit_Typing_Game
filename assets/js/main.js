@@ -9,8 +9,8 @@ var css = ["syntax","backgrounds","borders","margins","padding","height/width","
 var css1 = ["syntax","backgrounds","borders","margins","padding","height/width","box-model","outline","text","fonts"];
 var python = ["zenofpython","yield","user-interface","whileloop","variables","tuple","statement","strings","str","slice","setuptools","try"];
 var python1 = ["zenofpython","yield","user-interface","whileloop","variables","tuple","statement","strings","str","slice","setuptools","try"];
-var vocabulary = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library"];
-var vocabulary1 = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library"];
+// var vocabulary1 = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library","minute","accord","consider",evident,practice,intend,concern,commit,issue,approach,establish,utter,conduct,engage,obtain,scarce,policy,straight,stock,apparent,property,fancy,concept,court,appoint,passage,vain,instance,coast,project,commission,constant,circumstances,constitute,level,affect,institute,render,appeal,generate,theory,range,campaign,league,labor,confer,grant,dwell,entertain,contract,earnest];
+var vocabulary = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library"]; //fix this bby making them the same--vocab1 and vocab2-->
 // ------ custom dictionary definitions for non-dicitonary programming terms---->
 var randomTerms = []
 var htmlTerms = ["div The <div> tag defines a division or a section in an HTML document. The <div> element is often used as a container for other HTML elements to style them with CSS or to perform certain tasks with JavaScript div,The <div> tag defines a division or a section in an HTML document."
@@ -68,6 +68,8 @@ wordList.javascript = javascript;
 wordList.css = css;
 wordList.python = python;
 wordList.vocabulary = vocabulary;
+
+bestScore();
 
 //------------------------------default start time with no difficulty selected*-------->
 var userTimeSelect = 500;
@@ -192,11 +194,14 @@ var blank_WordTable = '<tr><th scope="row">1</th><td>fdsf</td><td>fdsfd</td></tr
 //------uses api index merriam academy--->//
 function userlostRound() {
     if (correctWords.length != 0) {
+        if(localStorage.getItem("user-best-score") < correctWords.length*1.5){
+            localStorage.setItem("user-best-score", correctWords.length*1.5)
+        }
         var i;
         for (i = 0; i < correctWords.length; i++) {
             var correctWordTable = blank_WordTable.replace("1", i + 1);
             correctWordTable = correctWordTable.replace("fdsf", correctWords[i]);
-            if ($(".active").attr("id") == "vocabulary") {
+            if ($(".chosen").attr("id") == "vocabulary") {
                 wordDefinition(correctWords[i], correctWordTable);
             }
             // ------uses personal definition index------->//
@@ -346,4 +351,35 @@ else
 {
 return false;
 }
+}
+
+
+
+// var score = 0;
+// var hightScore = 0;
+// if(localStorage.getItem("score") == null) {
+//     var best = localStorage.setItem("user-best-score", 0);
+// }else {
+//     var best = localStorage.getItem("user-best-score");
+// }
+
+// var
+// function bestScore() {
+//   localStorage.setItem("mytime", Date.now());
+// }
+
+// function readValue("mytime") {
+//   var x = localStorage.getItem("mytime");
+//   document.getElementById("timer").innerHTML = x;
+// }
+function bestScore() {
+    if(localStorage.getItem("user-best-score") == null) {
+    localStorage.setItem("user-best-score", 0);
+     document.getElementById("user-best-score").innerHTML = 0;
+}else {
+     var best = localStorage.getItem("user-best-score");
+     document.getElementById("user-best-score").innerHTML = best;
+}
+
+   
 }
