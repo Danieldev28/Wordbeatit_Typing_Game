@@ -1,6 +1,6 @@
-
-# Daniel Smith Portfolio 
 <a name="top"></a>
+# Daniel Smith Portfolio 
+
 Welcome to my portfolio interactive front end development application! My name is Daniel and through this project I present to you
 roughly six weeks app development in the making.
 
