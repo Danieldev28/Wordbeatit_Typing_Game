@@ -1,8 +1,9 @@
 <a name="top"></a>
 # Daniel Smith Portfolio 
 
-Welcome to my portfolio interactive front end development application! My name is Daniel and through this project I present to you
-roughly six weeks app development in the making.
+Welcome to my portfolio interactive front end development application! 
+My name is Daniel and through this project I present to you roughly six weeks 
+app development in the making.
 
 # Technologies
 
@@ -28,7 +29,7 @@ and allow smoother gameplay. Also a modal to display best score to the user
 in a modal after restart of the match. As well as coloring the random category button, 
 vocabulary button, and god mode differently to indentify them as special 
 categories to the end user. Place the app in the google playstore store with my logo
-<a href ="assets/images/wordbeatit-yellow.jpg">here.<a>
+<a href ="assets/images/wordbeatit-yellow.jpg" target="_blank">here.<a>
 
 # UX
 
@@ -81,16 +82,17 @@ https://www.codecademy.com/articles/glossary-html
 https://www.w3schools.com/tags/
 stackoverflow.com
 jsfiddle.com
-(github repository) https://bousbissikouceila.github.io/speedTypingGame/
-
+(github repository)<a href="https://bousbissikouceila.github.io/speedTypingGame/"
+target="_blank"> 
+</a>
 
 # Deployment
 
 This cite is hosted from Github directly from the master branch.
 You may access the file through,
 
-https://danieldev28.github.io/Wordbeatit_Typing_Game/
-
+<a href="https://danieldev28.github.io/Wordbeatit_Typing_Game//"target="_blank"
+></a>
 During my class and while working in a small group we were able to bring
 testers in to test the game provide valuable feedback, in order upgrade the 
 games capabilities in order to match real world demands of the end user. I 
@@ -101,19 +103,20 @@ fixed and that my logic was not flawed.
 
 # Credits 
 I would like to credit numerous cites for inspiration in ux design.
-Cites used for my iframe <a href="https://www.typing.com/">website I used to 
-inspiration</a> I would also like to credit to stackoverflow community for any 
-methods and code snippets used, it was a really awesome resource to roll 
-up my sleeves and learn on the website.
+Cites used for my iframe <a href="https://www.typing.com/"target="_blank"
+>website I used to inspiration</a> I would also like to credit to stackoverflow 
+community for any methods and code snippets used, it was a really awesome 
+resource to roll up my sleeves and learn on the website.
 
 # Media 
 
 Any media you see inside this web application was created by yours truly
 a.k.a me. Fonts were borrowed and inspired by 
-<a href ="https://zeraxas.github.io/Word-Beater/">here.</a>
+<a href ="https://zeraxas.github.io/Word-Beater/" target="_blank">here.</a>
 But I overcame many of them through the help of my mentor abhay barthwal.
 My countdown timer uses digtal-7 webfont kit to give it a very nice digital
-display from <a href ="https://www.dafont.com/digital-7.font">here.</a>
+display from <a href ="https://www.dafont.com/digital-7.font"target="_blank">
+here.</a>
 
 ## Acknowledgements
 
