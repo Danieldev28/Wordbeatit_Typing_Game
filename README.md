@@ -1,3 +1,12 @@
+
+               _       __                  __ __                  __   _  __   __
+              | |     / /____   _____ ____/ // /_   ___   ____ _ / /_ (_)/ /_ / /
+              | | /| / // __ \ / ___// __  // __ \ / _ \ / __ `// __// // __// / 
+              | |/ |/ // /_/ // /   / /_/ // /_/ //  __// /_/ // /_ / // /_ /_/  
+              |__/|__/ \____//_/    \__,_//_.___/ \___/ \__,_/ \__//_/ \__/(_)   
+                                                                                 
+
+
 <a name="top"></a>
 # Daniel Smith Portfolio 
 
@@ -82,17 +91,16 @@ https://www.codecademy.com/articles/glossary-html
 https://www.w3schools.com/tags/
 stackoverflow.com
 jsfiddle.com
-(github repository)<a href="https://bousbissikouceila.github.io/speedTypingGame/"
-target="_blank"> 
-</a>
+(github repository) https://bousbissikouceila.github.io/speedTypingGame/
+
 
 # Deployment
 
 This cite is hosted from Github directly from the master branch.
 You may access the file through,
 
-<a href="https://danieldev28.github.io/Wordbeatit_Typing_Game//"target="_blank"
-></a>
+https://danieldev28.github.io/Wordbeatit_Typing_Game/
+
 During my class and while working in a small group we were able to bring
 testers in to test the game provide valuable feedback, in order upgrade the 
 games capabilities in order to match real world demands of the end user. I 
