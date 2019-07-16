@@ -9,8 +9,8 @@ var css = ["syntax","backgrounds","borders","margins","padding","height/width","
 var css1 = ["syntax","backgrounds","borders","margins","padding","height/width","box-model","outline","text","fonts"];
 var python = ["zenofpython","yield","user-interface","whileloop","variables","tuple","statement","strings","str","slice","setuptools","try"];
 var python1 = ["zenofpython","yield","user-interface","whileloop","variables","tuple","statement","strings","str","slice","setuptools","try"];
-// var vocabulary1 = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library","minute","accord","consider",evident,practice,intend,concern,commit,issue,approach,establish,utter,conduct,engage,obtain,scarce,policy,straight,stock,apparent,property,fancy,concept,court,appoint,passage,vain,instance,coast,project,commission,constant,circumstances,constitute,level,affect,institute,render,appeal,generate,theory,range,campaign,league,labor,confer,grant,dwell,entertain,contract,earnest];
-var vocabulary = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library"]; //fix this bby making them the same--vocab1 and vocab2-->
+var vocabulary = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library","minute","accord","consider","evident","practice","intend","concern","commit","issue","approach","establish","utter","conduct","engage","obtain","scarce","policy","straight","stock","apparent","property","fancy","concept","court","appoint","passage","vain","instance","coast","project","commission","constant","circumstances","constitute","level","affect","institute","render","appeal","generate","theory","range","campaign","league","labor","confer","grant","dwell","entertain","contract","earnest"];
+var vocabulary1 = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library", "minute","accord","consider","evident","practice","intend","concern","commit","issue","approach","establish","utter","conduct","engage","obtain","scarce","policy","straight","stock","apparent","property","fancy","concept","court","appoint","passage","vain","instance","coast","project","commission","constant","circumstances","constitute","level","affect","institute","render","appeal","generate","theory","range","campaign","league","labor","confer","grant","dwell","entertain","contract","earnest"];
 // ------ custom dictionary definitions for non-dicitonary programming terms---->
 var randomTerms = []
 var htmlTerms = ["div The <div> tag defines a division or a section in an HTML document. The <div> element is often used as a container for other HTML elements to style them with CSS or to perform certain tasks with JavaScript div,The <div> tag defines a division or a section in an HTML document."
@@ -73,7 +73,8 @@ bestScore();
 
 //------------------------------default start time with no difficulty selected*-------->
 var userTimeSelect = 500;
-//--------------on click of category make others inactive------------->
+//--------------on click of category make others inactive,choose a random category if random is selected
+// then, show the level buttons------------->
 $(".category").one("click", function() {
     if($(this).attr('id') == "random"){
         var randomelement = document.getElementsByClassName("category");
@@ -94,7 +95,7 @@ $(".category").one("click", function() {
 
 });
 
-// -------------on click of level difficulty make others inactive, usertime dependent setting------->
+// -------------on click of level difficulty make others inactive, usertimer changes with level setting------->
 $(".level").on("click", function() {
     userTimeSelect = $(this).attr("id");
     $(this).siblings().addClass("inactive");
@@ -102,7 +103,7 @@ $(".level").on("click", function() {
     count = parseInt(userTimeSelect);
 });
 
-//--------start of the game* on non click of Start Match alert, on click of category + Start Match start game --------->
+//--------******START OF THE GAME!******* on non-click of Start Match show alert modal, on click of category + Start Match start game --------->
 $("#start_game").on("click", function() {
     if ($(".active").length == 0) {
         $("#dialogModal").modal();
@@ -128,16 +129,12 @@ $("#start_game").on("click", function() {
 
 });
 
-//---Varibeles for counter-- varibale to hold correct words----->
+//---Global Varibles for counter and all correct words----->
 // 
 var count = parseInt(userTimeSelect);
 var counter;
 var correctWords = []
 
-
-
-// var counter = setInterval(timer, 10); //10 will  run it every 100th of a second (DELETE)
-// Got the right answer! do this...---->
 function timer() {
     if (count == 0) {
         verifyResult();
@@ -146,11 +143,11 @@ function timer() {
     else {
         count--;
     }
-    // defines my count speed at id of user coutn 1 second at a time---->
+    // defines my count speed at id of user count 1 second at a time---->
     document.getElementById("user-time").innerHTML = count / 100;
 }
 
-// -----random word generator function to generate random words for the interactive gameplay/play a round----->
+// -----**Setup of round**,random word generator function to generate random words for the interactive gameplay/play a round----->
 function playRound() {
     var speed = 10;
     var id_selected_category = $(".chosen").attr("id");
@@ -160,7 +157,8 @@ function playRound() {
     wordList[id_selected_category].splice(index_to_remove, 1);
     counter = setInterval(timer, speed); //10 will  run it every 100th of a second
 }
-// -----function to check the testing word against user answer input rerurns true or false only--->
+// -----function to check the current word against user answer input returns true or false only--->
+// ---------------------------------------------------------------------
 function checkResult() {
     var testWord = $("#current-word").text();
     var userAnswer = $("#answer-input").val();
@@ -188,11 +186,12 @@ $("#answer-input").keyup(function() {
 
 
 });
-
+// -----------------------------------------------------------------------
 //--------------------------------------------------------------------Tablechart---------->
 var blank_WordTable = '<tr><th scope="row">1</th><td>fdsf</td><td>fdsfd</td></tr>'
-//------uses api index merriam academy--->//
+//------uses api index merriam academy vocabulary--->//
 function userlostRound() {
+    //---on loose logic for when to store the best score in local storage,populate the blank word table with correct word* and defintions based on else condition--->
     if (correctWords.length != 0) {
         if(localStorage.getItem("user-best-score") < correctWords.length*1.5){
             localStorage.setItem("user-best-score", correctWords.length*1.5)
@@ -204,7 +203,7 @@ function userlostRound() {
             if ($(".chosen").attr("id") == "vocabulary") {
                 wordDefinition(correctWords[i], correctWordTable);
             }
-            // ------uses personal definition index------->//
+            // ------uses personal definition index switch and case------->//
             else {
                 var definitionIndex;
                 var testword = correctWords[i].toString();
@@ -235,7 +234,7 @@ function userlostRound() {
 
 };
 
-// ----------------------------------------------------api callling merriam dictionary------>//
+// ----------------------------------------------------api calling merriam dictionary for correct definitions------>//
 
 function wordDefinition(targetWord, tablestring) {
     var xhr = new XMLHttpRequest();
@@ -259,14 +258,14 @@ function wordDefinition(targetWord, tablestring) {
 
 
 
-// ---on keypress of enter!--//
+// ---on keypress of enter input my answer verifyresult!--//
 $("#answer-input").on("keypress", function(e) {
     var code = e.keyCode || e.which;
     if (code == 13) {
         verifyResult();
     }
 });
-
+// if check result equals correct store the word in a string, play the sfx win, hide the checkbox play another round---->
 function verifyResult() {
     clearInterval(counter);
     checkResult();
@@ -281,6 +280,7 @@ function verifyResult() {
         playRound();
     }
     // got the wrong answer! do this..---->
+    //---game sfx on lose--->
     else {
         gameSdfx("lose");
         $("#answer-input").attr("readonly", "readonly");
@@ -291,15 +291,14 @@ function verifyResult() {
         // alert("you didnt get anything right");
         }
         else{
-          $("#myModal").modal();  
+          $("#gameoverModal").modal();  
         }
         
         userlostRound();
-        // alert(correctWords.length*1.5); (DELETE)
-        // alert("You have lost the round please play again.");(DELETE)
+        
     }
 };
-
+// ----game sfx on win--->
 function gameSdfx(soundOf) {
     var audioPlayer = document.getElementById("gameSoundPlayer");
     if (soundOf === "win") {
@@ -312,13 +311,13 @@ function gameSdfx(soundOf) {
     }
 
 }
-
+// Email form submission entry on click-->
 $("#mail-submission").on("click", function(){
     var user_mail = $("#exampleInputEmail1").val();
     if (user_mail == "" || ValidateEmail(user_mail) == false){
         $("#noemailfilledModal").modal();
         
-        
+        // Email js template and send to user-->
     } else {
          $(".hide-table").hide();
     $("#thank-you").show();
@@ -332,14 +331,12 @@ $("#mail-submission").on("click", function(){
    
 }
 
-  
-//   onClick = "this.style.visibility= 'hidden';"
-
 var service_id = "default_service";
 var template_id = "template_jyLHx8AM";
 emailjs.send(service_id, template_id, template_params);
 });
 
+// ensure they put a valid email address-->
 function ValidateEmail(inputText)
 {
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -353,25 +350,7 @@ return false;
 }
 }
 
-
-
-// var score = 0;
-// var hightScore = 0;
-// if(localStorage.getItem("score") == null) {
-//     var best = localStorage.setItem("user-best-score", 0);
-// }else {
-//     var best = localStorage.getItem("user-best-score");
-// }
-
-// var
-// function bestScore() {
-//   localStorage.setItem("mytime", Date.now());
-// }
-
-// function readValue("mytime") {
-//   var x = localStorage.getItem("mytime");
-//   document.getElementById("timer").innerHTML = x;
-// }
+// ------your best game score displayed on restart of match------>
 function bestScore() {
     if(localStorage.getItem("user-best-score") == null) {
     localStorage.setItem("user-best-score", 0);
