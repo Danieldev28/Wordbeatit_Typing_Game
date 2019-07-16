@@ -38,7 +38,7 @@ and allow smoother gameplay. Also a modal to display best score to the user
 in a modal after restart of the match. As well as coloring the random category button, 
 vocabulary button, and god mode differently to indentify them as special 
 categories to the end user. Place the app in the google playstore store with my logo
-<a href ="assets/images/wordbeatit-yellow.jpg" target="_blank">here.<a>
+<a href ="assets/images/wordbeatit-yellow.jpg">here.<a>
 
 # UX
 
@@ -111,8 +111,8 @@ fixed and that my logic was not flawed.
 
 # Credits 
 I would like to credit numerous cites for inspiration in ux design.
-Cites used for my iframe <a href="https://www.typing.com/"target="_blank"
->website I used to inspiration</a> I would also like to credit to stackoverflow 
+Cites used for my iframe <a href="https://www.typing.com/">
+website I used to inspiration</a> I would also like to credit to stackoverflow 
 community for any methods and code snippets used, it was a really awesome 
 resource to roll up my sleeves and learn on the website.
 
@@ -120,10 +120,10 @@ resource to roll up my sleeves and learn on the website.
 
 Any media you see inside this web application was created by yours truly
 a.k.a me. Fonts were borrowed and inspired by 
-<a href ="https://zeraxas.github.io/Word-Beater/" target="_blank">here.</a>
+<a href ="https://zeraxas.github.io/Word-Beater/">here.</a>
 But I overcame many of them through the help of my mentor abhay barthwal.
 My countdown timer uses digtal-7 webfont kit to give it a very nice digital
-display from <a href ="https://www.dafont.com/digital-7.font"target="_blank">
+display from <a href ="https://www.dafont.com/digital-7.font">
 here.</a>
 
 ## Acknowledgements

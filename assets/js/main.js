@@ -70,6 +70,7 @@ wordList.python = python;
 wordList.vocabulary = vocabulary;
 
 bestScore();
+var emailBodyContainer ="";
 
 //------------------------------default start time with no difficulty selected*-------->
 var userTimeSelect = 500;
@@ -188,7 +189,7 @@ $("#answer-input").keyup(function() {
 });
 // -----------------------------------------------------------------------
 //--------------------------------------------------------------------Tablechart---------->
-var blank_WordTable = '<tr><th scope="row">1</th><td>fdsf</td><td>fdsfd</td></tr>'
+var blank_WordTable = '<tr><th scope="row" id="tabNumber">1</th><td>fdsf</td><td>fdsfd</td></tr>'
 //------uses api index merriam academy vocabulary--->//
 function userlostRound() {
     //---on loose logic for when to store the best score in local storage,populate the blank word table with correct word* and defintions based on else condition--->
@@ -201,7 +202,9 @@ function userlostRound() {
             var correctWordTable = blank_WordTable.replace("1", i + 1);
             correctWordTable = correctWordTable.replace("fdsf", correctWords[i]);
             if ($(".chosen").attr("id") == "vocabulary") {
+            // emailBodyContainer +=correctWords[i] + " : ";
                 wordDefinition(correctWords[i], correctWordTable);
+
             }
             // ------uses personal definition index switch and case------->//
             else {
@@ -210,18 +213,25 @@ function userlostRound() {
                 if(html1.includes(correctWords[i])){
                     definitionIndex = html1.indexOf(correctWords[i]);
                     correctWordTable = correctWordTable.replace("fdsfd", htmlTerms[definitionIndex]);
+                    emailBodyContainer +=correctWords[i] + " : " + htmlTerms[definitionIndex] +  ",    ";
+                    
                 }
                 else if(css1.includes(correctWords[i])){
                     definitionIndex = css1.indexOf(correctWords[i]);
                     correctWordTable = correctWordTable.replace("fdsfd", cssTerms[definitionIndex]);
+                    emailBodyContainer +=correctWords[i] + " : " + cssTerms[definitionIndex] + ",    ";
                 }
                 else if(javascript1.includes(correctWords[i])){
                     definitionIndex = javascript1.indexOf(correctWords[i]);
                     correctWordTable = correctWordTable.replace("fdsfd", javascriptTerms[definitionIndex]);
+                    emailBodyContainer +=correctWords[i] + " : " + javascriptTerms[definitionIndex] + ",    ";
+                    
                 }
                 else if(python1.includes(correctWords[i])){
                     definitionIndex = python1.indexOf(correctWords[i]);
                     correctWordTable = correctWordTable.replace("fdsfd", pythonTerms[definitionIndex]);
+                    emailBodyContainer +=correctWords[i] + " : " + pythonTerms[definitionIndex] + ",    ";
+                    
                 }
                 
                 $("#table-body").append(correctWordTable);
@@ -246,6 +256,7 @@ function wordDefinition(targetWord, tablestring) {
         if (this.readyState == 4 && this.status == 200) {
             var meaning = JSON.parse(this.responseText);
             tablestring = tablestring.replace("fdsfd", meaning[0].shortdef[0]);
+             emailBodyContainer += targetWord + " : " + meaning[0].shortdef[0] +  ",      ";
             $("#table-body").append(tablestring);
             $(".hide-table").show();
             return meaning[0].shortdef[0];
@@ -325,7 +336,7 @@ $("#mail-submission").on("click", function(){
    "to_email": user_mail ,
    "from_name": "Daniel",
    "subject_message": "I am prefilling the subject message",
-   "body_message": "words and definition",
+   "body_message": emailBodyContainer,
  
     }
    

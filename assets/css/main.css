@@ -2,6 +2,13 @@ body {
     background: yellow;
 }
 
+#wordbeelogo {
+    height: 62px; 
+    width: 62px;
+    
+    
+}
+
 /*----------------------combined text align for all classes----->*/
 .align-it-center {
     text-align:center;
