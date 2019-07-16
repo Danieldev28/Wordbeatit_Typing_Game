@@ -125,6 +125,5 @@ had envsioned if not better.  Thank you for viewing this presentation of my HTML
 CSS,and Bootstrap, and javascript practical application to 
 a real project I enjoyed making it and hope to present more to you in the future.
 Until then that wraps up my skills as as a brand new front-end web developer.
-                                                
                                                 <a href="#top">Back to top</a>
 ### This is for educational use.
