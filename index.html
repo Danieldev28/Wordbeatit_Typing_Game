@@ -13,16 +13,18 @@
   <link rel="stylesheet" href="assets/css/main.css" type="text/css">
   <link rel="stylesheet" href="assets/css/stylesheet.css" type="text/css">
   <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script type="text/javascript">
-        (function() {
-            emailjs.init("user_PQJEWwGrqhbhmG7EAXsX7");
-        })();
-    </script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("user_PQJEWwGrqhbhmG7EAXsX7");
+    })();
+  </script>
   <title>WordBeatit!</title>
 </head>
 
 <body class="align-it">
-  <header class="content align-it-center"><h1>Wordbeatit<img src="assets/images/Wordbeatit.png"id ="wordbeelogo" alt="wordbeepng"></h1>
+  <header class="content align-it-center">
+    <h1 id="gameName">Wordbeatit</h1>
+    <img src="assets/images/Wordbeatit.png" id="wordbeelogo" alt="wordbeepng">
   </header>
 
   <div class="col-12 align-it-center" id="banner-button">
@@ -79,15 +81,15 @@
       </tbody>
     </table>
     <!--------------Email Results Form------------->
-        <div class="form-group hide-table">
-          <label for="exampleInputEmail1">Enter your email to recieve your vocabulary terms...</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Enter email*">
-          <small id="privacy-policy" class="form-text text-muted">Your privacy is important to us. We'll never share your email with anyone else.</small>
-          <br>
-          <button class="btn btn-light" id ="mail-submission">Submit</button>
-        </div>
-     <h5 id="thank-you">your email is on the way!</h5>
-  
+    <div class="form-group hide-table">
+      <label for="exampleInputEmail1">Enter your email to recieve your vocabulary terms...</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" required aria-describedby="emailHelp" placeholder="Enter email*">
+      <small id="privacy-policy" class="form-text text-muted">Your privacy is important to us. We'll never share your email with anyone else.</small>
+      <br>
+      <button class="btn btn-light" id="mail-submission">Submit</button>
+    </div>
+    <h5 id="thank-you">your email is on the way!</h5>
+
     <div class="instruction-card align-it-center">
       <h5 class="instruction-label align-it-center">Instructions</h5>
       <p class="align-it-center">Press <strong class="text-success">Start Match</strong> to begin a new game. Be fast!</p>
@@ -98,62 +100,68 @@
 
 
 
- <!--Choose your category Modal-->
+  <!--Choose your category Modal-->
   <div class="modal fade" id="dialogModal" role="dialog">
     <div class="modal-dialog .modal-dialog-centered">
 
       <!-- Modal content-->
       <div class="modal-content">
-       
+
         <div class="modal-header">
           <h4 class="modal-title">What should I do?</h4>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <p><ol><li>Please select your game category</li><li>Choose a difficulty level</li><li>Press start match</li></ol></p>
+          <p>
+            <ol>
+              <li>Please select your game category</li>
+              <li>Choose a difficulty level</li>
+              <li>Press start match</li>
+            </ol>
+          </p>
         </div>
-        <button type="button"  data-dismiss="modal" class="btn btn-primary">Ok</button>
+        <button type="button" data-dismiss="modal" class="btn btn-primary">Ok</button>
       </div>
-      </div>
-      </div>
-      
-      <!--You didn't get anything right! Modal-->
+    </div>
+  </div>
+
+  <!--You didn't get anything right! Modal-->
   <div class="modal fade" id="nothingrightdialogModal" role="dialog">
     <div class="modal-dialog .modal-dialog-centered">
 
       <!-- Modal content-->
-       
+
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Play again!</h4>
         </div>
-       <div class="modal-body">
+        <div class="modal-body">
           <p>You didn't get anything right, better luck next time</p>
         </div>
-        <button type="button"  data-dismiss="modal" class="btn btn-primary">Ok</button>
+        <button type="button" data-dismiss="modal" class="btn btn-primary">Ok</button>
       </div>
-      </div>
-      </div>
-      
-        <!--You didn't put a correct email address! Modal-->
+    </div>
+  </div>
+
+  <!--You didn't put a correct email address! Modal-->
   <div class="modal fade" id="noemailfilledModal" role="dialog">
     <div class="modal-dialog .modal-dialog-centered">
 
       <!-- Modal content-->
-       
+
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title">Say What.....?</h4>
         </div>
-       <div class="modal-body">
+        <div class="modal-body">
           <p>Please enter a valid email address</p>
         </div>
-        <button type="button"  data-dismiss="modal" class=>Ok</button>
+        <button type="button" data-dismiss="modal" class=>Ok</button>
       </div>
-      </div>
-      </div>
-      
-      
+    </div>
+  </div>
+
+
   <!--Game Over Modal-->
   <div class="modal fade" id="gameoverModal" role="dialog">
     <div class="modal-dialog .modal-dialog-centered">
@@ -174,7 +182,7 @@
 
     </div>
   </div>
-  
+
   <!---------------------------sfx playercontrols----------->
   <div id="sfx-player">
     <audio id="gameSoundPlayer" controls>

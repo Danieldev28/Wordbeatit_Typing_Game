@@ -3,41 +3,47 @@ body {
 }
 
 #wordbeelogo {
-    height: 62px; 
-    width: 62px;
-    
-    
+    height: 68px;
+    width: 68px;
+    padding-bottom: 15px;
+
+
+}
+
+#gameName{
+    display: inline-block;
 }
 
 /*----------------------combined text align for all classes----->*/
+
 .align-it-center {
-    text-align:center;
+    text-align: center;
 }
 
 /*--------------------------Category selection javascript-------->*/
 
-#level-button{
-    display:none;
+#level-button {
+    display: none;
     /*text-align:center;*/
-    margin-top:10px!important;
+    margin-top: 10px!important;
 }
 
-.inactive{
+.inactive {
     pointer-events: none;
-    color:rgb(0,0,0,0.5);
+    color: rgb(0, 0, 0, 0.5);
 }
 
 .active {
-    background-color:#28a745!important;
+    background-color: #28a745!important;
 }
 
 .on-start {
-    margin-top:10px;
+    margin-top: 10px;
 }
 
 /*Count-down Timer style */
 
-#user-time{
+#user-time {
     font-size: -webkit-xxx-large;
     font-style: normal;
     width: 10px;
@@ -45,11 +51,12 @@ body {
 }
 
 /*---------------------------------Checkbox player wins!------->*/
-.align{
-    color:green;
+
+.align {
+    color: green;
     margin-top: 20px !important;
     display: none;
-    
+
 }
 
 .instruction-card {
@@ -61,8 +68,9 @@ body {
 }
 
 #sfx-player {
-    display:none;
+    display: none;
 }
-#thank-you{
-    display:none;
+
+#thank-you {
+    display: none;
 }
