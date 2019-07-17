@@ -210,24 +210,24 @@ function userlostRound() {
             else {
                 var definitionIndex;
                 var testword = correctWords[i].toString();
-                if(html1.includes(correctWords[i])){
+                if(html1.indexOf(correctWords[i]) > -1){
                     definitionIndex = html1.indexOf(correctWords[i]);
                     correctWordTable = correctWordTable.replace("fdsfd", htmlTerms[definitionIndex]);
                     emailBodyContainer +=correctWords[i] + " : " + htmlTerms[definitionIndex] +  ",    ";
                     
                 }
-                else if(css1.includes(correctWords[i])){
+                else if(css1.indexOf(correctWords[i]) > -1){
                     definitionIndex = css1.indexOf(correctWords[i]);
                     correctWordTable = correctWordTable.replace("fdsfd", cssTerms[definitionIndex]);
                     emailBodyContainer +=correctWords[i] + " : " + cssTerms[definitionIndex] + ",    ";
                 }
-                else if(javascript1.includes(correctWords[i])){
+                else if(javascript1.indexOf(correctWords[i]) > -1){
                     definitionIndex = javascript1.indexOf(correctWords[i]);
                     correctWordTable = correctWordTable.replace("fdsfd", javascriptTerms[definitionIndex]);
                     emailBodyContainer +=correctWords[i] + " : " + javascriptTerms[definitionIndex] + ",    ";
                     
                 }
-                else if(python1.includes(correctWords[i])){
+                else if(python1.indexOf(correctWords[i]) > -1){
                     definitionIndex = python1.indexOf(correctWords[i]);
                     correctWordTable = correctWordTable.replace("fdsfd", pythonTerms[definitionIndex]);
                     emailBodyContainer +=correctWords[i] + " : " + pythonTerms[definitionIndex] + ",    ";
