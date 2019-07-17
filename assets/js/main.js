@@ -189,7 +189,7 @@ $("#answer-input").keyup(function() {
 });
 // -----------------------------------------------------------------------
 //--------------------------------------------------------------------Tablechart---------->
-var blank_WordTable = '<tr><th scope="row" id="tabNumber">1</th><td>fdsf</td><td>fdsfd</td></tr>'
+var blank_WordTable = '<tr><td scope="row" class="tabNumber">1</td><td>fdsf</td><td>fdsfd</td></tr>'
 //------uses api index merriam academy vocabulary--->//
 function userlostRound() {
     //---on loose logic for when to store the best score in local storage,populate the blank word table with correct word* and defintions based on else condition--->
@@ -246,8 +246,9 @@ function userlostRound() {
 
 // ----------------------------------------------------api calling merriam dictionary for correct definitions------>//
 
-function wordDefinition(targetWord, tablestring) {
+async function wordDefinition(targetWord, tablestring) {
     var xhr = new XMLHttpRequest();
+  
 
     xhr.open("GET", "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" + targetWord + "?key=833754d1-505c-459f-a936-2182413f2cc4");
     xhr.send();
@@ -259,6 +260,7 @@ function wordDefinition(targetWord, tablestring) {
              emailBodyContainer += targetWord + " : " + meaning[0].shortdef[0] +  ",      ";
             $("#table-body").append(tablestring);
             $(".hide-table").show();
+            $(".tabNumber").hide();
             return meaning[0].shortdef[0];
         }
     };
@@ -299,7 +301,7 @@ function verifyResult() {
         $("#final-score").text(correctWords.length * 1.5);
         if (correctWords.length === 0) {
         $("#nothingrightdialogModal").modal();
-        // alert("you didnt get anything right");
+        
         }
         else{
           $("#gameoverModal").modal();  
