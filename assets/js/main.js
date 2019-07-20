@@ -11,6 +11,7 @@ var python = ["zenofpython","yield","user-interface","whileloop","variables","tu
 var python1 = ["zenofpython","yield","user-interface","whileloop","variables","tuple","statement","strings","str","slice","setuptools","try"];
 var vocabulary = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library","minute","accord","consider","evident","practice","intend","concern","commit","issue","approach","establish","utter","conduct","engage","obtain","scarce","policy","straight","stock","apparent","property","fancy","concept","court","appoint","passage","vain","instance","coast","project","commission","constant","circumstances","constitute","level","affect","institute","render","appeal","generate","theory","range","campaign","league","labor","confer","grant","dwell","entertain","contract","earnest"];
 var vocabulary1 = ["superb", "amazing", "clear","blurry","stone","basket","butter","reciprocal","indefinite","latitude","encouraging","billowy","skillful","unwieldy","tightfisted","hungry","alphabet","backpack","barbecue","cappuccino","circus","church","electricity","floodlight","library", "minute","accord","consider","evident","practice","intend","concern","commit","issue","approach","establish","utter","conduct","engage","obtain","scarce","policy","straight","stock","apparent","property","fancy","concept","court","appoint","passage","vain","instance","coast","project","commission","constant","circumstances","constitute","level","affect","institute","render","appeal","generate","theory","range","campaign","league","labor","confer","grant","dwell","entertain","contract","earnest"];
+
 // ------ custom dictionary definitions for non-dicitonary programming terms---->
 var randomTerms = []
 var htmlTerms = ["div The <div> tag defines a division or a section in an HTML document. The <div> element is often used as a container for other HTML elements to style them with CSS or to perform certain tasks with JavaScript div,The <div> tag defines a division or a section in an HTML document."
@@ -26,6 +27,7 @@ var htmlTerms = ["div The <div> tag defines a division or a section in an HTML d
 ,"headings The heading elements are H1, H2, H3, H4, H5, and H6 with H1 being the highest (or most important) level and H6 the least."
 ,"hyperlinks a hyperlink, or simply a link, is a reference to data that the reader can follow by clicking or tapping. A hyperlink points to a whole document or to a specific element within a document."
 ];
+
 var javascriptTerms = ["whileloop The while statement creates a loop that is executed while a specified condition is true. ... while - loops through a block of code while a specified condition is true."
 ,"forloop In computer science, a for-loop is a control flow statement for specifying iteration, which allows code to be executed repeatedly."
 ,"else In programming languages, an else statement is an alternative statement that is executed if the result of a previous test condition evaluates to false."
@@ -37,6 +39,7 @@ var javascriptTerms = ["whileloop The while statement creates a loop that is exe
 ,"documentobjectmodel DOM. The DOM (Document Object Model) is an API that exposes the elements of HTML and XML documents as programming language objects. ... The most common programming language used in the DOM is JavaScript, which is used on most websites."
 ,"elseif A high-level programming language statement that compares two or more sets of data and tests the results. If the results are true, the THEN instructions are taken; if not, the ELSE instructions are taken."
 ];
+
 var cssTerms = ["syntax CSS Syntax. A CSS rule-set consists of a selector and a declaration block: The selector points to the HTML element you want to style. The declaration block contains one or more declarations separated by semicolons. Each declaration includes a CSS property name and a value, separated by a colon ", 
 "backgrounds The background property in CSS allows you to control the background of any element (what paints underneath the content in that element). It is a shorthand property, which means that it allows you to write what would be multiple CSS properties in one."
 ,"borders the border-style property has four values: border-style: dotted solid double dashed; top border is dotted. right border is solid."
@@ -48,6 +51,7 @@ var cssTerms = ["syntax CSS Syntax. A CSS rule-set consists of a selector and a 
 , "text CSS - Text. ... The text-decoration property is used to underline, overline, and strikethrough text. The text-transform property is used to capitalize text or convert text to uppercase or lowercase letters. The white-space property is used to control the flow and formatting of text."
 , "fonts CSS Fonts is a module of CSS that defines font-related properties and how font resources are loaded. It lets you define the style of a font, such as its family, size and weight, line height, and the glyph variants to use when multiple are available for a single character."
 , ];
+
 var pythonTerms = ["zenofpython The Zen of Python is a collection of 19 'guiding principles' for writing computer programs that influence the design of the Python programming language."
 , "yield at a glance, the yield statement is used to define generators, replacing the return of a function to provide a result to its caller without destroying local variables. Unlike a function, where on each call it starts with new set of variables, a generator will resume the execution where it was left off."
 , "user-interface There are many graphical user interface (GUI) toolkits that you can use with the Python programming language. The big three are Tkinter, wxPython, and PyQt. ... A graphical user interface is an application that has buttons, windows, and lots of other widgets that the user can use to interact with your application."
@@ -61,6 +65,7 @@ var pythonTerms = ["zenofpython The Zen of Python is a collection of 19 'guiding
 , "setuptools Setuptools is a package development process library designed to facilitate packaging Python projects by enhancing the Python standard library distutils (distribution utilities). It includes: Python package and module definitions. Distribution package metadata. Test hooks."
 , "try The try and except block in Python is used to catch and handle exceptions. Python executes code following the try statement as a “normal” part of the program. The code that follows the except statement is the program's response to any exceptions in the preceding try clause."
 ,];
+
 //  stores each cateogry in an object for retrival---->
 wordList.random = random;
 wordList.html = html;
@@ -104,7 +109,7 @@ $(".level").on("click", function() {
     count = parseInt(userTimeSelect);
 });
 
-//--------******START OF THE GAME!******* on non-click of Start Match show alert modal, on click of category + Start Match start game --------->
+//--------******START OF THE GAME!******* on click Start Match show alert modal, on click of category + Start Match start game --------->
 $("#start_game").on("click", function() {
     if ($(".active").length == 0) {
         $("#dialogModal").modal();
@@ -187,7 +192,7 @@ $("#answer-input").keyup(function() {
 
 
 });
-// -----------------------------------------------------------------------
+
 //--------------------------------------------------------------------Tablechart---------->
 var blank_WordTable = '<tr><td scope="row" class="tabNumber">1</td><td>fdsf</td><td>fdsfd</td></tr>'
 //------uses api index merriam academy vocabulary--->//
@@ -268,9 +273,6 @@ async function wordDefinition(targetWord, tablestring) {
 
 };
 
-
-
-
 // ---on keypress of enter input my answer verifyresult!--//
 $("#answer-input").on("keypress", function(e) {
     var code = e.keyCode || e.which;
@@ -278,6 +280,7 @@ $("#answer-input").on("keypress", function(e) {
         verifyResult();
     }
 });
+
 // if check result equals correct store the word in a string, play the sfx win, hide the checkbox play another round---->
 function verifyResult() {
     clearInterval(counter);
@@ -292,6 +295,7 @@ function verifyResult() {
         count = parseInt(userTimeSelect);
         playRound();
     }
+    
     // got the wrong answer! do this..---->
     //---game sfx on lose--->
     else {
@@ -311,6 +315,7 @@ function verifyResult() {
         
     }
 };
+
 // ----game sfx on win--->
 function gameSdfx(soundOf) {
     var audioPlayer = document.getElementById("gameSoundPlayer");
@@ -324,6 +329,7 @@ function gameSdfx(soundOf) {
     }
 
 }
+
 // Email form submission entry on click-->
 $("#mail-submission").on("click", function(){
     var user_mail = $("#exampleInputEmail1").val();

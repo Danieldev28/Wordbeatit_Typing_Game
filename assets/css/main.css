@@ -6,8 +6,6 @@ body {
     height: 68px;
     width: 68px;
     padding-bottom: 15px;
-
-
 }
 
 #gameName{
@@ -56,7 +54,6 @@ body {
     color: green;
     margin-top: 20px !important;
     display: none;
-
 }
 
 .instruction-card {
